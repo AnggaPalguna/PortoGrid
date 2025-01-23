@@ -5,42 +5,12 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header("location: login.php");
     exit;
-} elseif (!isset($_GET['id'])) {
-    header('Location: photo.php');
-    exit;
 }
 
-require '../includes/koneksi.php';
-
-// Membuat instance dari class Koneksi
-$koneksi = new Koneksi();
-$con = $koneksi->getConnection();
-
-// Menggunakan prepared statement untuk mengambil data berdasarkan id
-$id = $con->real_escape_string($_GET['id']);
-$sql = "SELECT * FROM tb_portofolio WHERE id = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Menyimpan data yang ditemukan dalam array
-$data = $result->fetch_assoc();
-if (!$data) {
-    echo "<script>
-        alert('Data tidak ditemukan.');
-        window.location.href = 'photo.php';
-    </script>";
-    exit;
-}
-
-// Mendapatkan daftar kategori
-$sqlKategori = "SELECT id, name FROM tb_category";
-$resultKategori = $con->query($sqlKategori);
-$kategoriList = [];
-while ($kategori = $resultKategori->fetch_assoc()) {
-    $kategoriList[] = $kategori;
-}
+// Memanggil data menggunakan OOP dari photo-edit-data.php
+$response = require './photo-edit-load.php';
+$data = $response['data'];
+$kategoriList = $response['kategoriList'];
 ?>
 
 <!DOCTYPE html>

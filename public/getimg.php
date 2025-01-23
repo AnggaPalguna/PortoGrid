@@ -1,5 +1,5 @@
 <?php
-require_once './includes/koneksi.php'; // Mengimpor file koneksi untuk menghubungkan ke database.
+require_once '../includes/koneksi.php'; // Mengimpor file koneksi untuk menghubungkan ke database.
 class getImage
 {
     private $db; // Properti untuk menyimpan koneksi database.

@@ -54,7 +54,7 @@ $data = $portofolio->getAllPortofolio(); // Mengambil semua data portofolio dari
           <img src="img/img4.jpg" class="d-block w-100 c-img" alt="Slide 1">
           <div class="carousel-caption top-1 mt-4 text-center">
             <h1 class="display-2 fw-bolder text-uppercase">Collections</h1>
-            <p class="mt-3 fs-4 ">Here Our Collections</p>
+            <p class="mt-3 fs-4 ">Berikut koleksi foto dari PortoGrid</p>
             <a href="#collections" class="btn btn-primary px-3 py-2 fs-6 fw-bolder text-uppercase">Read More</a>
           </div>
         </div>
@@ -70,8 +70,8 @@ $data = $portofolio->getAllPortofolio(); // Mengambil semua data portofolio dari
           // Memastikan hanya gambar aktif yang ditampilkan.
           if ($image['photoaktif']) {
         ?>
-            <a class="col-md-12 col-lg-4 img-fluid py-2 imgtho" href="uploads/<?= $image['photo'] ?>" data-toggle="lightbox">
-              <img src="uploads/<?= $image['photo'] ?>" alt="random img" class="img-fluid">
+            <a class="col-md-12 col-lg-4 img-fluid py-2 imgtho" href="../uploads/<?= $image['photo'] ?>" data-toggle="lightbox">
+              <img src="../uploads/<?= $image['photo'] ?>" alt="random img" class="img-fluid img-thumbnail ">
             </a>
           <?php
           } else { ?>
