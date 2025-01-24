@@ -70,7 +70,7 @@ $data = $portofolio->getAllPortofolio(); // Mengambil semua data portofolio dari
           // Memastikan hanya gambar aktif yang ditampilkan.
           if ($image['photoaktif']) {
         ?>
-            <a class="col-md-12 col-lg-4 img-fluid py-2 imgtho" href="../uploads/<?= $image['photo'] ?>" data-toggle="lightbox">
+            <a class="col-md-12 col-lg-4 img-fluid py-2 imgtho" href="../uploads/<?= $image['photo'] ?>" data-toggle="lightbox" data-gallery="img-gallery">
               <img src="../uploads/<?= $image['photo'] ?>" alt="random img" class="img-fluid img-thumbnail ">
             </a>
           <?php
